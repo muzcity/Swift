@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  SwiftSample
 //
-//  Created by brinicle on 2015. 7. 11..
+//  Created by muzcity on 2015. 7. 11..
 //  Copyright (c) 2015년 muzcity. All rights reserved.
 //
 
@@ -12,6 +12,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
 	//let로 했을때 생성을 같이 해버린다.
 	private let tvSample = UITableView.new();
+	
+	//타이틀 이름.
+	private let tableViewTitles : Array<String> = ["UILabel Sample - muzcity"]
 	
 	override func loadView() {
 		super.loadView()
@@ -51,7 +54,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	// MARK: - 데이터 소스, 델리게이트만 연결하고 구현을 하지 않으면 에러를 뱉어낸다.
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
 	{
-		return 20;
+		return self.tableViewTitles.count;
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
@@ -71,11 +74,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 			println("\(indexPath.row)");
 		}
 		
-		
+
 		//위에서 ?로 되어 있기때문에 cell이 널일수있기때문에 ? 표시 textLabel은 기본으로 생성 항상 있으므로 !로 처리.
-		cell?.textLabel!.text = "\(indexPath.row)";
-		
-		
+		cell?.textLabel!.text = self.tableViewTitles[indexPath.row];
 		
 		//리턴값은 아무것도 없는 형태, 꼭 셀을 리턴해야하므로 !표시.
 		return cell!;
@@ -85,9 +86,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
 		
-		var alert = UIAlertView(title:"item", message: "\(indexPath.row) clicked", delegate: nil, cancelButtonTitle: "ok");
+		var vc = UILabelSampleViewController()
 		
-		alert.show()
+		self.navigationController?.pushViewController(vc, animated: true)
+		
+//		var alert = UIAlertView(title:"item", message: "\(indexPath.row) clicked", delegate: nil, cancelButtonTitle: "ok");
+//		
+//		alert.show()
+		
 	}
 
 

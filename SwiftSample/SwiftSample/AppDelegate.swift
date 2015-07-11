@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  SwiftSample
 //
-//  Created by brinicle on 2015. 7. 11..
+//  Created by muzcity on 2015. 7. 11..
 //  Copyright (c) 2015년 muzcity. All rights reserved.
 //
 
@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		var vc = ViewController.new();
 		
 		var naviVC = UINavigationController(rootViewController: vc);
+		
+		naviVC.navigationBar.translucent = false
 		
 		self.window?.rootViewController = naviVC;
 		
