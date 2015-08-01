@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	private let tvSample = UITableView.new();
 	
 	//타이틀 이름.
-	private let tableViewTitles : Array<String> = ["UILabel Sample - muzcity"]
+	private let tableViewTitles : Array<String> = ["UILabel Sample", "UIButton Sample"]
 	
 	override func loadView() {
 		super.loadView()
@@ -85,14 +85,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
+
+		switch indexPath.row {
+		case 0:
+			var vc = UILabelSampleViewController()
+			
+			self.navigationController?.pushViewController(vc, animated: true)
+
+		case 1:
+			var vc = UIButtonSampleViewController(nibName: "UIButtonSampleViewController", bundle: nil)
+			
+			self.navigationController?.pushViewController(vc, animated: true)
+			
+		default:
+			break
+		}
 		
-		var vc = UILabelSampleViewController()
-		
-		self.navigationController?.pushViewController(vc, animated: true)
-		
-//		var alert = UIAlertView(title:"item", message: "\(indexPath.row) clicked", delegate: nil, cancelButtonTitle: "ok");
-//		
-//		alert.show()
 		
 	}
 

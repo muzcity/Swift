@@ -13,6 +13,8 @@
 		E325D3801B5139EA00A80692 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E325D37E1B5139EA00A80692 /* LaunchScreen.xib */; };
 		E325D38C1B5139EA00A80692 /* SwiftSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E325D38B1B5139EA00A80692 /* SwiftSampleTests.swift */; };
 		E325D39B1B513DCB00A80692 /* UILabelSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E325D39A1B513DCB00A80692 /* UILabelSampleViewController.swift */; };
+		E3EC957F1B6C9C5E00A88384 /* UIButtonSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EC957E1B6C9C5E00A88384 /* UIButtonSampleViewController.swift */; };
+		E3EC95811B6CA00000A88384 /* UIButtonSampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3EC95801B6CA00000A88384 /* UIButtonSampleViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		E325D38A1B5139EA00A80692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E325D38B1B5139EA00A80692 /* SwiftSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSampleTests.swift; sourceTree = "<group>"; };
 		E325D39A1B513DCB00A80692 /* UILabelSampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UILabelSampleViewController.swift; path = UILabelSample/UILabelSampleViewController.swift; sourceTree = "<group>"; };
+		E3EC957E1B6C9C5E00A88384 /* UIButtonSampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIButtonSampleViewController.swift; path = UIButtonSample/UIButtonSampleViewController.swift; sourceTree = "<group>"; };
+		E3EC95801B6CA00000A88384 /* UIButtonSampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UIButtonSampleViewController.xib; path = UIButtonSample/UIButtonSampleViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		E325D3721B5139EA00A80692 /* SwiftSample */ = {
 			isa = PBXGroup;
 			children = (
+				E3EC957D1B6C9C2F00A88384 /* UIButton Sample */,
 				E325D3951B513D4400A80692 /* UILabel Sample */,
 				E325D3751B5139EA00A80692 /* AppDelegate.swift */,
 				E325D3771B5139EA00A80692 /* ViewController.swift */,
@@ -118,6 +123,15 @@
 				E325D39A1B513DCB00A80692 /* UILabelSampleViewController.swift */,
 			);
 			name = "UILabel Sample";
+			sourceTree = "<group>";
+		};
+		E3EC957D1B6C9C2F00A88384 /* UIButton Sample */ = {
+			isa = PBXGroup;
+			children = (
+				E3EC957E1B6C9C5E00A88384 /* UIButtonSampleViewController.swift */,
+				E3EC95801B6CA00000A88384 /* UIButtonSampleViewController.xib */,
+			);
+			name = "UIButton Sample";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +216,7 @@
 			files = (
 				E325D3801B5139EA00A80692 /* LaunchScreen.xib in Resources */,
 				E325D37D1B5139EA00A80692 /* Images.xcassets in Resources */,
+				E3EC95811B6CA00000A88384 /* UIButtonSampleViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3EC957F1B6C9C5E00A88384 /* UIButtonSampleViewController.swift in Sources */,
 				E325D3781B5139EA00A80692 /* ViewController.swift in Sources */,
 				E325D3761B5139EA00A80692 /* AppDelegate.swift in Sources */,
 				E325D39B1B513DCB00A80692 /* UILabelSampleViewController.swift in Sources */,
