@@ -409,6 +409,7 @@
 				E325D3911B5139EA00A80692 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E325D3921B5139EA00A80692 /* Build configuration list for PBXNativeTarget "SwiftSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +418,7 @@
 				E325D3941B5139EA00A80692 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
