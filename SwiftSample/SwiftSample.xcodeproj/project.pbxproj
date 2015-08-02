@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BAAC33F1B6DD290003A98BC /* MZInfinityVerticalLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAAC33E1B6DD290003A98BC /* MZInfinityVerticalLabel.swift */; };
 		E325D3761B5139EA00A80692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E325D3751B5139EA00A80692 /* AppDelegate.swift */; };
 		E325D3781B5139EA00A80692 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E325D3771B5139EA00A80692 /* ViewController.swift */; };
 		E325D37D1B5139EA00A80692 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E325D37C1B5139EA00A80692 /* Images.xcassets */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4BAAC33E1B6DD290003A98BC /* MZInfinityVerticalLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZInfinityVerticalLabel.swift; path = UILabelSample/MZInfinityVerticalLabel.swift; sourceTree = "<group>"; };
 		E325D3701B5139EA00A80692 /* SwiftSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E325D3741B5139EA00A80692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E325D3751B5139EA00A80692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				E325D39A1B513DCB00A80692 /* UILabelSampleViewController.swift */,
+				4BAAC33E1B6DD290003A98BC /* MZInfinityVerticalLabel.swift */,
 			);
 			name = "UILabel Sample";
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3EC957F1B6C9C5E00A88384 /* UIButtonSampleViewController.swift in Sources */,
+				4BAAC33F1B6DD290003A98BC /* MZInfinityVerticalLabel.swift in Sources */,
 				E325D3781B5139EA00A80692 /* ViewController.swift in Sources */,
 				E325D3761B5139EA00A80692 /* AppDelegate.swift in Sources */,
 				E325D39B1B513DCB00A80692 /* UILabelSampleViewController.swift in Sources */,
