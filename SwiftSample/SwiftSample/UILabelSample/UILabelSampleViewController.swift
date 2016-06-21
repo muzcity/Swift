@@ -11,7 +11,7 @@ import UIKit
 class UILabelSampleViewController: UIViewController {
 
     deinit {
-        println("UILabelSampleViewController deinit")
+        print("UILabelSampleViewController deinit")
     }
     
 	override func loadView() {
@@ -27,7 +27,7 @@ class UILabelSampleViewController: UIViewController {
 		
 		self.title = "UILabel"
 		
-		var label : UILabel = UILabel.new()
+		var label : UILabel = UILabel()
 		
 		self.view.addSubview(label)
 		
@@ -35,15 +35,15 @@ class UILabelSampleViewController: UIViewController {
 		label.textAlignment = NSTextAlignment.Center
 		label.text = "center align"
 		
-		label.setTranslatesAutoresizingMaskIntoConstraints(false)
+		label.translatesAutoresizingMaskIntoConstraints = false
 		
-		self.view .addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[label]|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["label" : label]))
-		self.view .addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[label(40)]", options: NSLayoutFormatOptions(0), metrics: nil, views: ["label" : label]))
+		self.view .addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[label]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["label" : label]))
+		self.view .addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[label(40)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["label" : label]))
 		
 		
 		
 		var prevLabel = label
-		label = UILabel.new()
+		label = UILabel()
 		
 		self.view.addSubview(label)
 		
@@ -55,10 +55,10 @@ class UILabelSampleViewController: UIViewController {
 		label.numberOfLines = 2
 		label.font = UIFont.systemFontOfSize(10)
 		
-		label.setTranslatesAutoresizingMaskIntoConstraints(false)
+		label.translatesAutoresizingMaskIntoConstraints = false
 		
-		self.view .addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[label]|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["label" : label]))
-		self.view .addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[prevLabel][label(40)]", options: NSLayoutFormatOptions(0), metrics: nil, views: ["label" : label, "prevLabel":prevLabel]))
+		self.view .addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[label]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["label" : label]))
+		self.view .addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[prevLabel][label(40)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["label" : label, "prevLabel":prevLabel]))
 		
 		
 		
@@ -78,10 +78,10 @@ class UILabelSampleViewController: UIViewController {
 		label.highlighted = false
 		label.highlightedTextColor = UIColor.whiteColor()
 		
-		label.setTranslatesAutoresizingMaskIntoConstraints(false)
+		label.translatesAutoresizingMaskIntoConstraints = false
 		
-		self.view .addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[label]|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["label" : label]))
-		self.view .addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[prevLabel][label(40)]", options: NSLayoutFormatOptions(0), metrics: nil, views: ["label" : label, "prevLabel":prevLabel]))
+		self.view .addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[label]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["label" : label]))
+		self.view .addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[prevLabel][label(40)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["label" : label, "prevLabel":prevLabel]))
 		
 		
 		
@@ -93,7 +93,7 @@ class UILabelSampleViewController: UIViewController {
         
         
         
-        var infinityLabel : MZInfinityVerticalLabel = MZInfinityVerticalLabel()
+        let infinityLabel : MZInfinityVerticalLabel = MZInfinityVerticalLabel()
         self.view.addSubview(infinityLabel)
         
         prevLabel = label
@@ -104,16 +104,16 @@ class UILabelSampleViewController: UIViewController {
 //        infinityLabel.frame = CGRectMake(0, 200, 375, 40)
 
         //for autolayout set.
-        infinityLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
-        self.view .addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[label]|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["label" : infinityLabel]))
-        self.view .addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[prevLabel][label]", options: NSLayoutFormatOptions(0), metrics: nil, views: ["label" : infinityLabel, "prevLabel":prevLabel]))
+        infinityLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.view .addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[label]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["label" : infinityLabel]))
+        self.view .addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[prevLabel][label]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["label" : infinityLabel, "prevLabel":prevLabel]))
         
-        var contraintForLabelHeight = NSLayoutConstraint.constraintsWithVisualFormat("V:[label(40)]", options: NSLayoutFormatOptions(0), metrics: nil, views: ["label":infinityLabel])
+        var contraintForLabelHeight = NSLayoutConstraint.constraintsWithVisualFormat("V:[label(40)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["label":infinityLabel])
         
-        self.view.addConstraint(contraintForLabelHeight[0] as! NSLayoutConstraint)
+        self.view.addConstraint(contraintForLabelHeight[0] )
         
         //높이를 설정을 한 constraint를 넘겨줘서 설정하도록 한다.
-        infinityLabel.weakConstraintForHeight = contraintForLabelHeight[0] as? NSLayoutConstraint
+        infinityLabel.weakConstraintForHeight = contraintForLabelHeight[0]
         
         infinityLabel.text = "abcde"
         
@@ -127,7 +127,7 @@ class UILabelSampleViewController: UIViewController {
         
         
         
-        label = UILabel.new()
+        label = UILabel()
         
         self.view.addSubview(label)
         
@@ -135,10 +135,10 @@ class UILabelSampleViewController: UIViewController {
         label.textAlignment = NSTextAlignment.Center
         label.text = "center align"
         
-        label.setTranslatesAutoresizingMaskIntoConstraints(false)
+        label.translatesAutoresizingMaskIntoConstraints = false
         
-        self.view .addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[label]|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["label" : label]))
-        self.view .addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[infinityLabel][label(40)]", options: NSLayoutFormatOptions(0), metrics: nil, views: ["label" : label, "infinityLabel":infinityLabel]))
+        self.view .addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[label]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["label" : label]))
+        self.view .addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[infinityLabel][label(40)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["label" : label, "infinityLabel":infinityLabel]))
         
     }
 

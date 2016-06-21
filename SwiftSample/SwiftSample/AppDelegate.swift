@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		self.window = UIWindow(frame: UIScreen.mainScreen().bounds);
 		
-		var vc = ViewController.new();
+		let vc = ViewController()
 		
-		var naviVC = UINavigationController(rootViewController: vc);
+		let naviVC = UINavigationController(rootViewController: vc);
 		
 		naviVC.navigationBar.translucent = false
 		

@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
 	//let로 했을때 생성을 같이 해버린다.
-	private let tvSample = UITableView.new();
+	private let tvSample = UITableView()
 	
 	//타이틀 이름.
 	private let tableViewTitles : Array<String> = ["UILabel Sample", "UIButton Sample"]
@@ -37,11 +37,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		
 		
 		//autolayout vfl.
-		var tv : UITableView = self.tvSample;
-		tv.setTranslatesAutoresizingMaskIntoConstraints(false)
-		self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[tv]|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["tv":tv]))
+		let tv : UITableView = self.tvSample;
+		tv.translatesAutoresizingMaskIntoConstraints = false
+		self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[tv]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["tv":tv]))
 		
-		self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[tv]|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["tv":tv]))
+		self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[tv]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["tv":tv]))
 		
 	}
 	
@@ -67,11 +67,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		// 타입 캐스팅이 제대로 되지 않으면 모두다 에러.  변수 선언에서 없는것, !, ?에 따라 아래 조건절 리턴값등이 모두 영향을 받는다.
 		
 		//cell이 널이 올수도 있다. 고로 ?가 되어야함.  변수 선언 as 구분모두.
-		var cell : UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(cellID) as? UITableViewCell
+		var cell = tableView.dequeueReusableCellWithIdentifier(cellID)
 		if cell == nil {
 			cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: cellID);
 			
-			println("\(indexPath.row)");
+			print("\(indexPath.row)");
 		}
 		
 
@@ -88,12 +88,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
 		switch indexPath.row {
 		case 0:
-			var vc = UILabelSampleViewController()
+			let vc = UILabelSampleViewController()
 			
 			self.navigationController?.pushViewController(vc, animated: true)
 
 		case 1:
-			var vc = UIButtonSampleViewController(nibName: "UIButtonSampleViewController", bundle: nil)
+			let vc = UIButtonSampleViewController(nibName: "UIButtonSampleViewController", bundle: nil)
 			
 			self.navigationController?.pushViewController(vc, animated: true)
 			

@@ -28,7 +28,7 @@ class MZInfinityVerticalLabel: UILabel {
     }
     
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
         self.labelHeight = 0
@@ -57,14 +57,14 @@ class MZInfinityVerticalLabel: UILabel {
     }
     */
 
-    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         
         if keyPath == "text" {
             
             var sz : CGSize = self.frame.size
             sz.height = 2000
             
-            var thatSize = self.sizeThatFits(sz)
+            let thatSize = self.sizeThatFits(sz)
             
             sz.height = thatSize.height;
             
@@ -91,7 +91,7 @@ class MZInfinityVerticalLabel: UILabel {
     
     
     deinit{
-        println("MZInfinityVerticalLabel deinit")
+        print("MZInfinityVerticalLabel deinit")
         
         self.removeObserver(self as NSObject, forKeyPath: "text")
     }
